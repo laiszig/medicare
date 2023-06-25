@@ -51,4 +51,5 @@ public class CompanyController {
         } catch (EmptyResultDataAccessException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-    }}
+    }
+}
