@@ -1,5 +1,6 @@
 package com.laiszig.medicarebackend.controller;
 
+import com.laiszig.medicarebackend.controller.request.MedicineRequest;
 import com.laiszig.medicarebackend.controller.request.MedicineSearchRequest;
 import com.laiszig.medicarebackend.entity.Medicine;
 import com.laiszig.medicarebackend.service.MedicineService;
@@ -34,7 +35,7 @@ public class MedicineController {
     }
 
     @PostMapping("/searchmedicines")
-    public List<Medicine> searchMedicine(@RequestBody MedicineSearchRequest search) {
+    public List<Medicine> searchMedicineByCategory(@RequestBody MedicineSearchRequest search) {
         return medicineService.searchByCategory(search.getCategoryId());
     }
 
@@ -58,11 +59,11 @@ public class MedicineController {
         }
     }
 
-//    @PutMapping("updatemedicine/{id}")
-//    public ResponseEntity<String> updateMedicine(@PathVariable("id") Integer medicineId, @RequestBody MedicineRequest medicineRequest) {
-//        medicineService.updateMedicine(medicineId, medicineRequest.getName(), medicineRequest.getYear(),
-//                medicineRequest.getDirector(), medicineRequest.getLanguage(), medicineRequest.getDescription(), medicineRequest.getGenre());
-//
-//        return new ResponseEntity<>("Medicine updated successfully", HttpStatus.OK);
-//    }
+    @PutMapping("updatemedicine/{id}")
+    public ResponseEntity<String> updateMedicine(@PathVariable("id") Integer medicineId, @RequestBody MedicineRequest medicineRequest) {
+        medicineService.updateMedicine(medicineId, medicineRequest.getName(), medicineRequest.getPrice(),
+                        medicineRequest.getCompany(), medicineRequest.getDescription(), medicineRequest.getCategory());
+
+        return new ResponseEntity<>("Medicine updated successfully", HttpStatus.OK);
+    }
 }
