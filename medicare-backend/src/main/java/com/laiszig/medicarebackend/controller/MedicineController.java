@@ -1,5 +1,6 @@
 package com.laiszig.medicarebackend.controller;
 
+import com.laiszig.medicarebackend.controller.request.MedicineSearchRequest;
 import com.laiszig.medicarebackend.entity.Medicine;
 import com.laiszig.medicarebackend.service.MedicineService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+@RestController
 public class MedicineController {
 
     private final MedicineService medicineService;
@@ -31,10 +33,10 @@ public class MedicineController {
         return new ResponseEntity<>(medicine, HttpStatus.CREATED);
     }
 
-//    @PostMapping("/searchmedicines")
-//    public List<Medicine> searchMedicine(@RequestBody MedicineSearchRequest search) {
-//        return medicineService.searchByGenre(search.getGenreId());
-//    }
+    @PostMapping("/searchmedicines")
+    public List<Medicine> searchMedicine(@RequestBody MedicineSearchRequest search) {
+        return medicineService.searchByCategory(search.getCategoryId());
+    }
 
     @GetMapping("/medicines/{id}")
     public ResponseEntity<Medicine> getMedicine(@PathVariable Integer id) {
