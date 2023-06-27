@@ -1,57 +1,61 @@
-
-
-<br>
-<br><br><br><br>
-
+<br />
+<br /><br /><br /><br />
 
 <p>list-medicine works!</p>
 
-<br>
-<br>
-<br>
-<br>
-<!-- <a class="nav-link" routerLink="/addmovie">Add Movie</a>
-<a class="nav-link" routerLink="/addshowtime">Add Showtime</a>
-<br>
-<h1>On Theatres</h1>
+<br />
+<br />
+<br />
 
-<select (change)="genreSelection($event)">
-    <option value="0">All Genres</option>
-    <option *ngFor="let genre of genres" value="{{ genre.id }}">{{ genre.name }}</option>
+<!-- <a class="nav-link" routerLink="/addmedicine">Add Medicine</a>
+<a class="nav-link" routerLink="/addcategory">Add Category</a> -->
+<br />
+<h1>Available</h1>
+
+<select (change)="categorySelection($event)">
+  <option value="0">All Categories</option>
+  <option *ngFor="let category of categories" value="{{ category.id }}">
+    {{ category.name }}
+  </option>
 </select>
 <div class="row">
   <div class="col-md-4">
-      <input type="text"
-          [(ngModel)]="filters.keyword"
-          name="keyword"
-          (input)="listMovies()" 
-          class="form-control"
-          placeholder="Filter movies"/>
+    <input
+      type="text"
+      [(ngModel)]="filters.keyword"
+      name="keyword"
+      (input)="listMedicines()"
+      class="form-control"
+      placeholder="Filter medicines"
+    />
   </div>
 </div>
 <table>
   <thead>
     <tr>
-      <th>Movie</th>
-      <th>Year</th>
-      <th>Genre</th>
+      <th>Medicine</th>
+      <th>Category</th>
+      <!-- <th>Company</th> -->
       <th>Description</th>
-      <th>Director</th>
-      <th>Language</th>
+      <th>Price</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let movie of movies">
-      <td>{{ movie.name }}</td>
-      <td>{{ movie.year }}</td>
-      <td>{{ movie.genre.name }}</td>
-      <td>{{ movie.description }}</td>
-      <td>{{ movie.director }}</td>
-      <td>{{ movie.language }}</td>
+    <tr *ngFor="let medicine of medicines">
+      <td>{{ medicine.name }}</td>
+      <td>{{ medicine.category.name }}</td>
+      <!-- <td>{{ medicine.company.name }}</td> -->
+      <td>{{ medicine.description }}</td>
+      <td>{{ medicine.price }}</td>
       <td>
-        <button (click)="redirectToMovieShowtimes($event);" value="{{movie.id}}">View Showtimes</button>
+        <!-- <button
+          (click)="redirectToBasket($event)"
+          value="{{ medicine.id }}"
+        >
+          Add to
+        </button> -->
       </td>
     </tr>
   </tbody>
-</table> -->
+</table>
