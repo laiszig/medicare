@@ -4,6 +4,8 @@ import { Medicine } from './medicine';
 import { SortCategoryService } from '../sort-category/sort-category.service';
 import { ListMedicineService } from './list-medicine.service';
 import { Category } from '../sort-category/category';
+import { SortCompanyService } from '../sort-company/sort-company.service';
+import { Company } from '../sort-company/company';
 
 @Component({
   selector: 'app-list-medicine',
@@ -15,24 +17,27 @@ export class ListMedicineComponent {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private medicineService: ListMedicineService,
-    private categoryService: SortCategoryService
+    private categoryService: SortCategoryService,
+    private companyService: SortCompanyService
   ) {}
 
   medicines: Medicine[];
   categories: Category[];
+  companies: Company[];
   filters = {
     keyword: '',
   };
 
   ngOnInit(): void {
     this.medicineService.getAllMedicines().subscribe((result) => {
-      console.log(result);
       this.medicines = result;
     });
     this.categoryService
       .getAllCategories()
       .subscribe((result) => (this.categories = result));
-    console.log(this.categories);
+    this.companyService
+      .getAllCompanies()
+      .subscribe((result) => (this.companies = result));
   }
 
   categorySelection = (event: any) => {

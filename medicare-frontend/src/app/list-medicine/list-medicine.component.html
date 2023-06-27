@@ -35,7 +35,7 @@
     <tr>
       <th>Medicine</th>
       <th>Category</th>
-      <!-- <th>Company</th> -->
+      <th>Company</th>
       <th>Description</th>
       <th>Price</th>
       <th></th>
@@ -45,7 +45,7 @@
     <tr *ngFor="let medicine of medicines">
       <td>{{ medicine.name }}</td>
       <td>{{ medicine.category.name }}</td>
-      <!-- <td>{{ medicine.company.name }}</td> -->
+      <td>{{ medicine.company.name }}</td>
       <td>{{ medicine.description }}</td>
       <td>{{ medicine.price }}</td>
       <td>
