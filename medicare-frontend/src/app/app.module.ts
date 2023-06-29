@@ -18,8 +18,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-    // NgImageSliderModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
