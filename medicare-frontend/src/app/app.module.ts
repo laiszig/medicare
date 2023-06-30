@@ -7,12 +7,14 @@ import { AddMedicineComponent } from './add-medicine/add-medicine.component';
 import { ListMedicineComponent } from './list-medicine/list-medicine.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddMedicineComponent,
-    ListMedicineComponent
+    ListMedicineComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

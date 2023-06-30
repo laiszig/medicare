@@ -6,6 +6,8 @@ import { ListMedicineService } from './list-medicine.service';
 import { Category } from '../sort-category/category';
 import { SortCompanyService } from '../sort-company/sort-company.service';
 import { Company } from '../sort-company/company';
+import { CartItem } from '../cart/cartItem';
+import { CartService } from '../cart/cart.service';
 
 @Component({
   selector: 'app-list-medicine',
@@ -13,6 +15,7 @@ import { Company } from '../sort-company/company';
   styleUrls: ['./list-medicine.component.css'],
 })
 export class ListMedicineComponent {
+  
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -24,6 +27,7 @@ export class ListMedicineComponent {
   medicines: Medicine[];
   categories: Category[];
   companies: Company[];
+  cartService: CartService;
   filters = {
     keyword: '',
   };
@@ -64,4 +68,16 @@ export class ListMedicineComponent {
       return m.name.toLowerCase().includes(this.filters.keyword.toLowerCase());
     });
   }
+
+
+  btnClick = (medicine: Medicine) => {
+    let cartItem = new CartItem();
+    cartItem.id = medicine.id;
+    cartItem.name = medicine.name;
+
+    cartItem.quantity = 1;
+    cartItem.price = 10;
+
+    this.cartService.addToCart(cartItem);
+  };
 }

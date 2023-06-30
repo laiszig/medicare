@@ -49,12 +49,9 @@
       <td>{{ medicine.description }}</td>
       <td>{{ medicine.price }}</td>
       <td>
-        <!-- <button
-          (click)="redirectToBasket($event)"
-          value="{{ medicine.id }}"
-        >
-          Add to
-        </button> -->
+        <button (click)="btnClick( medicine )" type="button" class="btn btn-success">
+          Add to cart!
+        </button>
       </td>
     </tr>
   </tbody>
