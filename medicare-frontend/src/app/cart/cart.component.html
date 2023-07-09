@@ -1,18 +1,19 @@
-<!-- <p>My Cart</p>
+<br>
+<br><br>
+
+<p>My Cart</p>
 
 <table>
   <thead>
     <tr>
-      <th>Movie</th>
-      <th>Time</th>
+      <th>Medicine</th>
       <th>Quantity</th>
       <th>Price</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let cartItem of cartItems">
-      <td>{{ cartItem.productName }}</td>
-      <td>{{ cartItem.time }}</td>
+      <td>{{ cartItem.name }}</td>
       <td>{{ cartItem.quantity }}</td>
       <td>{{ cartItem.price | currency }}</td>
     </tr>
@@ -28,4 +29,4 @@
 </table>
 
 <br />
-<button type="button" class="btn btn-primary-outline pull-right" (click)="btnClick();"><i class="fa fa-plus"></i> Payment </button>   -->
+<button type="button" class="btn btn-primary-outline pull-right" (click)="btnClick();"><i class="fa fa-plus"></i> Payment </button>  

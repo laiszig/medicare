@@ -78,7 +78,6 @@ export class ListMedicineComponent {
     cartItem.quantity = 1;
     cartItem.price = medicine.price;
 
-    console.log(cartItem)
     this.cartService.addToCart(cartItem);
   };
 }

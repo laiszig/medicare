@@ -19,7 +19,10 @@ export class CartService {
     let found = false;
     for (let index = 0; index < items.length; index++) {
       let cartItem = items[index];
+
       if (cartItem.id == newCartItem.id) {
+
+        console.log(cartItem.quantity)
         cartItem.quantity++;
         items[index] = cartItem;
         found = true;
