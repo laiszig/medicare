@@ -2,7 +2,7 @@ package com.laiszig.medicarebackend.controller.request;
 
 import com.laiszig.medicarebackend.entity.Category;
 import com.laiszig.medicarebackend.entity.Company;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
