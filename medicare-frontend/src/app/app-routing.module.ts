@@ -5,6 +5,7 @@ import { AddMedicineComponent } from './add-medicine/add-medicine.component';
 import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   {"path":"medicines", component: ListMedicineComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {"path":"cart", component:CartComponent},
   {"path":"register",component:RegisterComponent},
   {"path":"login",component:LoginComponent},
+  {"path":"payment",component:PaymentComponent}
 ];
 
 @NgModule({

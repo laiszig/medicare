@@ -73,9 +73,7 @@ export class CartComponent {
   }
 
   btnClick() {
-    alert("Tá pago!!");
-    this.clearCart(this.cartItems)
-    this.router.navigateByUrl('/purchase');
+    this.router.navigateByUrl('/payment');
   };
 
 }
