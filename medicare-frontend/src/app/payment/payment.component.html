@@ -9,7 +9,7 @@
         <form action="/action_page.php">
   
           <div class="row">
-            <div class="col-50">
+            <!-- <div class="col-50">
               <h3>Billing Address</h3>
               <label for="fname"><i class="fa fa-user"></i> Full Name</label>
               <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
@@ -19,7 +19,7 @@
               <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
               <label for="city"><i class="fa fa-institution"></i> City</label>
               <input type="text" id="city" name="city" placeholder="New York">
-            </div>
+            </div> -->
   
             <div class="col-50">
               <h3>Payment</h3>
@@ -51,15 +51,17 @@
         <h4>Cart
           <span class="price" style="color:black">
             <i class="fa fa-shopping-cart"></i>
-            <b>total number of</b>
+            <b></b>
           </span>
         </h4>
         <tr *ngFor="let cartItem of cartItems">
-        <p><a>{{ cartItem.name }}</a> <span class="price">{{ cartItem.price | currency }</span>
-        </p>
+            <p class="cart-item">
+                <span class="cart-item-name">{{ cartItem.name }}</span>
+                <span class="price cart-item-price">{{ cartItem.price | currency }}</span>
+              </p>              
         </tr>
         <hr>
-        <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+        <p>Total <span class="price" style="color:black"><b>{{ total | currency }}</b></span></p>
         <button type="button" class="btn btn-primary-outline pull-right"
              (click)="btnClick();"><i class="fa fa-plus"></i> Continue to Checkout! </button>  
       </div>

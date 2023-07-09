@@ -12,9 +12,6 @@ export class CartService {
   items : CartItem[];
 
   public addToCart(newCartItem: CartItem) {
-
-
-    console.log("oiiiii :D")
     let items = this.loadCart();
     let found = false;
     for (let index = 0; index < items.length; index++) {
