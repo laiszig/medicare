@@ -21,13 +21,13 @@ export class ListMedicineComponent {
     private activatedRoute: ActivatedRoute,
     private medicineService: ListMedicineService,
     private categoryService: SortCategoryService,
-    private companyService: SortCompanyService
+    private companyService: SortCompanyService,
+    private cartService: CartService
   ) {}
 
   medicines: Medicine[];
   categories: Category[];
   companies: Company[];
-  cartService: CartService;
   filters = {
     keyword: '',
   };
@@ -76,8 +76,9 @@ export class ListMedicineComponent {
     cartItem.name = medicine.name;
 
     cartItem.quantity = 1;
-    cartItem.price = 10;
+    cartItem.price = medicine.price;
 
+    console.log(cartItem)
     this.cartService.addToCart(cartItem);
   };
 }
